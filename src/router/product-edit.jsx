@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import ProductForm from "../components/product-form";
+import LoadingSpinner from "../components/loading-spinner";
 import { useProduct, useUpdateProduct } from "../gateway/products";
 
 import "./product-edit.css";
@@ -10,7 +11,7 @@ import "./product-edit.css";
 function ProductEdit() {
   const { id } = useParams();
   const { data } = useProduct(id);
-  const { mutate, isSuccess } = useUpdateProduct();
+  const { mutate, isSuccess, isLoading } = useUpdateProduct();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,6 +33,7 @@ function ProductEdit() {
       </div>
       <div>
         <h1>Edit Product</h1>
+        {isLoading ? <LoadingSpinner /> : null}
         {data != null ? (
           <ProductForm
             product={data}

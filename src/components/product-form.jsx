@@ -7,11 +7,7 @@ import { useCategories } from "../gateway/products";
 import "./product-form.css";
 
 function ProductForm({ product, onSubmit }) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       id: product?.id ?? "",
       title: product?.title ?? "",
