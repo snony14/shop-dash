@@ -29,6 +29,7 @@ function ProductForm({ product, onSubmit }) {
       <div className="form-row">
         <div>Title</div>
         <input
+          type="text"
           className="form-control"
           {...register("title", { required: true })}
         />

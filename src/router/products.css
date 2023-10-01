@@ -9,16 +9,15 @@
 
 .table-header {
     display: table-header-group;
-    background-color: gray;
     font-weight: bold;
     font-size: 25px;
+    border: 1px solid purple
 }
 
 .table-header-cell {
     display: table-cell;
     padding: 10px;
     text-align: justify;
-    border-bottom: 1px solid black;
 }
 
 .table-body {

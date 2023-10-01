@@ -1,16 +1,24 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import "./root.css";
 
 function Root() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate("/products");
+    }
+  }, [navigate, location]);
+
   return (
     <div className="root">
       <div className="navbar">
-        <div>Shop Dash</div>
-        <nav>
-          <Link to={`products`}>Products</Link>
-        </nav>
+        <h2>Shop Dash</h2>
+        <Link to={`products`}>Products</Link>
       </div>
       <Outlet />
     </div>

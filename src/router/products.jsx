@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import editIcon from "../assets/edit.svg";
+import EditIcon from "../assets/edit-icon";
+import LoadingSpinner from "../components/loading-spinner";
 import ProductsFilter from "../components/products-filter";
 import { useProducts } from "../gateway/products";
 
@@ -10,11 +11,18 @@ import "./products.css";
 function Products() {
   const [filters, setFilters] = useState();
   const { data: products, isLoading } = useProducts(filters);
+  const navigate = useNavigate();
 
   return (
     <div className="products">
       <div className="products-action">
-        <Link to="/products/new">Add Product</Link>
+        <button
+          onClick={() => {
+            navigate("/products/new");
+          }}
+        >
+          Add Product
+        </button>
       </div>
       <ProductsFilter
         filters={filters}
@@ -22,21 +30,23 @@ function Products() {
           setFilters(newFilters);
         }}
       />
-      {isLoading ? "LOADING..." : null}
+      {isLoading ? <LoadingSpinner /> : null}
       {products != null ? <ProductsTable products={products} /> : null}
     </div>
   );
 }
 
+const headerTitles = ["Image", "Title", "Category", "Price", "Action"];
+
 function ProductsTable({ products }) {
   return (
     <div className="table">
       <div className="table-header">
-        <div className="table-header-cell">Image</div>
-        <div className="table-header-cell">Title</div>
-        <div className="table-header-cell">Category</div>
-        <div className="table-header-cell">Price</div>
-        <div className="table-header-cell">Action</div>
+        {headerTitles.map((title) => (
+          <div key={title} className="table-header-cell">
+            {title}
+          </div>
+        ))}
       </div>
       <div className="table-body">
         {products.map((product) => (
@@ -49,7 +59,7 @@ function ProductsTable({ products }) {
             <div className="table-body-cell">{product.price}</div>
             <div className="table-body-cell">
               <Link to={`/products/${product.id}/edit`}>
-                <img src={editIcon} alt="edit icon" />
+                <EditIcon />
               </Link>
             </div>
           </div>

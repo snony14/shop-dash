@@ -7,15 +7,14 @@ import ProductForm from "../components/product-form";
 import "./product-edit.css";
 
 function NewProduct() {
-  const { mutate, isSuccess, error } = useCreateProduct();
+  const { mutate, isSuccess } = useCreateProduct();
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("RENDER");
-    return () => {
-      console.log("TEST");
-    };
-  }, []);
+    if (isSuccess) {
+      navigate("/products");
+    }
+  }, [navigate, isSuccess]);
 
   return (
     <div className="product-edit">

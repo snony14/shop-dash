@@ -29,7 +29,6 @@ function ProductsFilter({ filters = {}, setFilters }) {
       </div>
       <div className="products-filter-categories">
         <div className="filter">
-          <span>Select Category</span>
           <select
             onChange={(e) => {
               const { category: oldCategory, ...newFilters } = filters;
