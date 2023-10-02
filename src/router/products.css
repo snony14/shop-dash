@@ -35,6 +35,7 @@
 .table-body-cell {
     display: table-cell;
     vertical-align: middle;
+    padding: 10px;
 }
 
 

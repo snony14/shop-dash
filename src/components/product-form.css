@@ -16,6 +16,13 @@ form>* {
     justify-content: flex-end;
 }
 
-.form-footer :first-child {
+.submit-btn {
+    background-color: green;
     margin-right: 10px;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ee6e6e;
+    color: white;
 }

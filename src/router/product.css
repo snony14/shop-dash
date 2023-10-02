@@ -1,0 +1,11 @@
+.edit-product {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.create-product {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}

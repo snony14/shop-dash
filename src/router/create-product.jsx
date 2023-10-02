@@ -5,9 +5,9 @@ import { useCreateProduct } from "../gateway/products";
 import ProductForm from "../components/product-form";
 import LoadingSpinner from "../components/loading-spinner";
 
-import "./product-edit.css";
+import "./product.css";
 
-function NewProduct() {
+function CreateProduct() {
   const { mutate, isSuccess, isLoading } = useCreateProduct();
   const navigate = useNavigate();
 
@@ -18,7 +18,7 @@ function NewProduct() {
   }, [navigate, isSuccess]);
 
   return (
-    <div className="product-edit">
+    <div className="create-product">
       <div>
         <button
           onClick={() => {
@@ -44,4 +44,4 @@ function NewProduct() {
   );
 }
 
-export default NewProduct;
+export default CreateProduct;

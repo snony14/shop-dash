@@ -67,8 +67,11 @@ function ProductForm({ product, onSubmit }) {
         />
       </div>
       <div className="form-footer">
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-btn">
+          Submit
+        </button>
         <button
+          className="cancel-btn"
           onClick={(e) => {
             e.preventDefault();
             navigate(-1);

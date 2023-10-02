@@ -6,9 +6,9 @@ import ProductForm from "../components/product-form";
 import LoadingSpinner from "../components/loading-spinner";
 import { useProduct, useUpdateProduct } from "../gateway/products";
 
-import "./product-edit.css";
+import "./product.css";
 
-function ProductEdit() {
+function EditProduct() {
   const { id } = useParams();
   const { data } = useProduct(id);
   const { mutate, isSuccess, isLoading } = useUpdateProduct();
@@ -21,7 +21,7 @@ function ProductEdit() {
   }, [isSuccess, navigate]);
 
   return (
-    <div className="product-edit">
+    <div className="edit-product">
       <div>
         <button
           onClick={() => {
@@ -33,8 +33,9 @@ function ProductEdit() {
       </div>
       <div>
         <h1>Edit Product</h1>
-        {isLoading ? <LoadingSpinner /> : null}
-        {data != null ? (
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : data != null ? (
           <ProductForm
             product={data}
             onSubmit={(product) => {
@@ -47,4 +48,4 @@ function ProductEdit() {
   );
 }
 
-export default ProductEdit;
+export default EditProduct;

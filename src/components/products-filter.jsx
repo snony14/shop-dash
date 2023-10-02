@@ -51,6 +51,9 @@ function ProductsFilter({ filters = {}, setFilters }) {
         <div className="filter">
           <span>Sort by</span>
           <button
+            className={
+              filters?.sort === "asc" ? "filter-btn--selected" : undefined
+            }
             onClick={() => {
               setFilters({ ...filters, sort: "asc" });
             }}
@@ -58,6 +61,9 @@ function ProductsFilter({ filters = {}, setFilters }) {
             Asc
           </button>
           <button
+            className={
+              filters?.sort === "desc" ? "filter-btn--selected" : undefined
+            }
             onClick={() => {
               setFilters({ ...filters, sort: "desc" });
             }}

@@ -21,3 +21,8 @@
 .filter>* {
     margin-right: 5px;
 }
+
+.filter-btn--selected {
+    background-color: #f32953;
+    color: white;
+}

@@ -2,8 +2,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import ErrorPage from "./router/error-page";
-import NewProduct from "./router/new-product";
-import ProductEdit from "./router/product-edit";
+import CreateProduct from "./router/create-product";
+import EditProduct from "./router/edit-product";
 import Products from "./router/products";
 import Root from "./router/root";
 
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "products/:id/edit",
-        element: <ProductEdit />,
+        element: <EditProduct />,
       },
       {
         path: "products/new",
-        element: <NewProduct />,
+        element: <CreateProduct />,
       },
     ],
   },
