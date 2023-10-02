@@ -1,0 +1,28 @@
+form {
+    max-width: 400px;
+}
+
+form>* {
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-btn {
+    background-color: green;
+    margin-right: 10px;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #ee6e6e;
+    color: white;
+}

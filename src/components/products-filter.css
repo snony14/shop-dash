@@ -1,0 +1,28 @@
+.products-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.products-filter-limit>* {
+    margin-right: 5px;
+}
+
+.products-filter-categories {
+    display: flex;
+    align-items: center;
+}
+
+.filter {
+    margin-right: 5px;
+}
+
+.filter>* {
+    margin-right: 5px;
+}
+
+.filter-btn--selected {
+    background-color: #f32953;
+    color: white;
+}

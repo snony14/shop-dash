@@ -1,0 +1,53 @@
+.products {
+    padding: 10px;
+}
+
+.table {
+    width: 100%;
+    display: table;
+}
+
+.table-header {
+    display: table-header-group;
+    font-weight: bold;
+    font-size: 25px;
+    border: 1px solid purple
+}
+
+.table-header-cell {
+    display: table-cell;
+    padding: 10px;
+    text-align: justify;
+}
+
+.table-body {
+    display: table-row-group;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-row:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.table-body-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+
+.table-body-cell>img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    height: 115px;
+}
+
+a>img {
+    width: 24px;
+    height: 24px;
+}
